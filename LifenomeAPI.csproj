@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{14B9E83F-9576-4B26-BA84-A1A214D1CA66}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LifenomeAPI</RootNamespace>
+    <AssemblyName>LifenomeAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonLibs40, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\CommonLibs40.dll</HintPath>
+    </Reference>
+    <Reference Include="Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=3.9.28.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ulog">
+      <HintPath>..\..\..\cs\Assemblies\ulog.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AndMe23API\API.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Nutrition.cs" />
+    <Compile Include="Entities\TraitBase.cs" />
+    <Compile Include="Json\ImportResponse.cs" />
+    <Compile Include="Json\StatusResponse.cs" />
+    <Compile Include="LifenomeAPI.cs" />
+    <Compile Include="Converters\Base64.cs" />
+    <Compile Include="Exceptions\APIException.cs" />
+    <Compile Include="Entities\Genotype.cs" />
+    <Compile Include="Entities\ProductDetail.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProfileLink.cs" />
+    <Compile Include="Entities\RecommendFitness.cs" />
+    <Compile Include="Entities\RecommendGroceries.cs" />
+    <Compile Include="Entities\RecommendsRecipes.cs" />
+    <Compile Include="Entities\RecommendsScinProducts.cs" />
+    <Compile Include="Entities\RecommendsSkinProductsSurvey.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\Report.cs" />
+    <Compile Include="Entities\ReportSection.cs" />
+    <Compile Include="Entities\ReportSectionEntries.cs" />
+    <Compile Include="Entities\TagBase.cs" />
+    <Compile Include="Entities\Trait.cs" />
+    <Compile Include="Exceptions\APIInvalidValueException.cs" />
+    <Compile Include="Json\APIErrorResponse.cs" />
+    <Compile Include="Json\APIResponse.cs" />
+    <Compile Include="Json\AuthRequest.cs" />
+    <Compile Include="Json\AuthResponse.cs" />
+    <Compile Include="Json\CreateReportPDFRequest.cs" />
+    <Compile Include="Json\ImportRequest.cs" />
+    <Compile Include="Json\JsonHelper.cs" />
+    <Compile Include="Entities\Profile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
